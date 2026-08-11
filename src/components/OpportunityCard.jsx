@@ -3,15 +3,18 @@ import { ArrowUpRight } from 'lucide-react'
 
 export default function OpportunityCard({ property }) {
   return (
-    <article className="group grid overflow-hidden border border-stone-dark bg-white md:grid-cols-12">
-      <Link to={`/opportunities/${property.id}`} className="relative md:col-span-5">
+    <article className="group grid overflow-hidden border border-stone-dark bg-white md:grid-cols-12 md:items-stretch">
+      <Link
+        to={`/opportunities/${property.id}`}
+        className="relative block overflow-hidden md:col-span-5 md:min-h-[20rem]"
+      >
         <img
           src={property.images[0]}
           alt={property.name}
-          className="h-56 w-full object-cover transition-transform duration-700 group-hover:scale-[1.03] md:h-full"
+          className="aspect-[4/3] h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03] md:absolute md:inset-0 md:aspect-auto"
         />
       </Link>
-      <div className="flex flex-col justify-between p-6 sm:p-8 md:col-span-7">
+      <div className="flex flex-col justify-between gap-8 p-6 sm:p-8 md:col-span-7 md:min-h-[20rem]">
         <div>
           <div className="flex flex-wrap items-center gap-3">
             <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-bronze">
@@ -48,7 +51,7 @@ export default function OpportunityCard({ property }) {
         </div>
         <Link
           to={`/opportunities/${property.id}`}
-          className="mt-8 inline-flex w-fit items-center gap-2 border-b border-navy pb-1 text-[12px] font-semibold uppercase tracking-[0.16em] text-navy transition-colors hover:border-bronze hover:text-bronze"
+          className="inline-flex w-fit items-center gap-2 border-b border-navy pb-1 text-[12px] font-semibold uppercase tracking-[0.16em] text-navy transition-colors hover:border-bronze hover:text-bronze"
         >
           View Opportunity
           <ArrowUpRight size={14} />
