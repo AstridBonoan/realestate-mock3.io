@@ -100,19 +100,27 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-white/10">
-        <div className="mx-auto flex max-w-7xl flex-col gap-4 px-5 py-6 text-xs text-white/50 sm:flex-row sm:items-center sm:justify-between sm:px-8 lg:px-10">
-          <p>© {new Date().getFullYear()} {company.name}. All rights reserved. Mockup design #3.</p>
-          <div className="flex flex-wrap gap-5">
-            <Link to="/privacy" className="hover:text-white">
-              Privacy Policy
-            </Link>
-            <Link to="/terms" className="hover:text-white">
-              Terms
-            </Link>
-            <Link to="/disclaimer" className="hover:text-white">
-              Disclaimer
-            </Link>
+        <div className="mx-auto flex max-w-7xl flex-col gap-3 px-5 py-6 text-xs text-white/50 sm:px-8 lg:px-10">
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+            <p>
+              © {new Date().getFullYear()} {company.name}. All rights reserved. Mockup design #3.
+            </p>
+            <div className="flex flex-wrap gap-5">
+              <Link to="/privacy" className="hover:text-white">
+                Privacy Policy
+              </Link>
+              <Link to="/terms" className="hover:text-white">
+                Terms
+              </Link>
+              <Link to="/disclaimer" className="hover:text-white">
+                Disclaimer
+              </Link>
+            </div>
           </div>
+          <p className="text-[11px] tracking-wide text-white/45">
+            Design &amp; development by{' '}
+            <span className="text-[#5B8DEF]">B&amp;C Software &amp; Web</span>.
+          </p>
         </div>
       </div>
     </footer>

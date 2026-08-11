@@ -2,6 +2,7 @@ import { Outlet, useLocation } from 'react-router-dom'
 import { useEffect } from 'react'
 import Navbar from './Navbar'
 import Footer from './Footer'
+import { BrandWatermark, BrandBadge } from './BrandMark'
 
 export default function Layout() {
   const location = useLocation()
@@ -13,12 +14,14 @@ export default function Layout() {
   }, [location.pathname, location.search])
 
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="relative flex min-h-screen flex-col">
+      <BrandWatermark />
       <Navbar />
-      <main id="main-content" className="flex-1">
+      <main id="main-content" className="relative z-0 flex-1">
         <Outlet />
       </main>
       <Footer />
+      <BrandBadge />
     </div>
   )
 }
